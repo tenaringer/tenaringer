@@ -1,0 +1,982 @@
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+
+@font-face {
+    font-family:'LFT Etica';
+    font-weight: normal;
+    font-style: normal;
+    src:url('LFT_Etica_Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family:'LFT Etica';
+    font-weight: 700;
+    font-style: normal;
+    src:url('LFT_Etica_Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family:'NRK Etica';
+    font-weight: 700;
+    font-style: normal;
+    src:url('NRK_Etica_Slab_Bold.woff2') format('woff2');
+}
+
+body {
+    font-family: 'LFT Etica', sans-serif;
+}
+
+.article__title {
+    flex: 0 0 100%;
+    font-family: 'NRK Etica', sans-serif;
+}
+
+a {
+    color: rgba(0, 102, 204, 1);
+    font-weight: 700;
+}
+
+small {
+    display: block;
+
+    font-size: 11px;
+    line-height: 13px;
+}
+
+blockquote {
+    position: relative;
+
+    display: block;
+
+    margin: 1em auto;
+    padding-left: 66px;
+
+    font-style: italic;
+}
+
+blockquote::before,
+blockquote::after {
+    position: absolute;
+
+    color: rgb(150, 150, 150);
+    font-family: serif;
+    font-size: 96px;
+    font-weight: normal;
+}
+
+blockquote::before {
+    content: "“";
+
+    left: 0;
+    top: -20px;
+}
+
+blockquote::after {
+    content: "";
+}
+
+sup {
+    position: relative;
+    top: -0.4em;
+
+    vertical-align: baseline;
+}
+
+/* ==========================================================================
+   Page Masthead
+   ========================================================================== */
+
+.page-masthead {
+    background: #E8E8E8;
+}
+
+.page-masthead__container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 0 6px 12px;
+}
+
+.page-masthead__branding {
+    align-self: flex-start;
+
+    max-height: 64px;
+}
+
+.page-masthead__advertorial-notice {
+    margin-bottom: 10px;
+
+    color: rgba(255, 255, 255, 1);
+    font-size: 10px;
+    text-align: center;
+}
+
+body[data-culturename="en-GB"] .page-masthead__container {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+body[data-culturename="en-GB"] .page-masthead__branding {
+    -ms-flex-order: -1;
+    -webkit-order: -1;
+    order: -1;
+}
+
+body[data-culturename="en-GB"] .page-masthead__advertorial-notice {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+
+    margin: 32px 0 0 10px;
+
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .page-masthead__branding {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    body[data-culturename="en-GB"] .page-masthead__container {
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        padding: 12px 0 6px;
+    }
+
+    body[data-culturename="en-GB"] .page-masthead__advertorial-notice {
+        margin: 5px auto 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-masthead__branding {
+        max-height: 48px;
+    }
+}
+
+/* ==========================================================================
+   Page Content
+   ========================================================================== */
+
+/* Scaffolding
+   ========================================================================== */
+
+.page-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #fff;
+    width: 98%;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.page-content article,
+.page-content aside {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.page-content article {
+    width: 67%;
+}
+
+.page-content aside {
+    width: 33%;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.page-content img {
+    max-width: 100%;
+}
+
+.page-content table {
+    width: 100%;
+    margin: 0.5em auto 1.5em;
+}
+
+@media screen and (max-width: 767px) {
+    .page-content {
+        display: block;
+    }
+
+    .page-content article,
+    .page-content aside {
+        width: 100%;
+        padding: 0;
+    }
+
+    .page-content article h1,
+    .page-content article h2,
+    .page-content article h3,
+    .page-content article h4,
+    .page-content article h5,
+    .page-content article h6,
+    .page-content article p,
+    .page-content article .image-subtitle {
+        padding: 0 10px;
+    }
+}
+
+.hs-responsive-embed {
+
+position: relative; 
+height: 0; 
+overflow: hidden; 
+padding-top: 0; 
+padding-left: 0; 
+padding-right: 0;
+
+}
+
+.hs-responsive-embed iframe, 
+.hs-responsive-embed object, 
+.hs-responsive-embed embed {
+
+position: absolute; 
+top: 0; 
+left: 0; 
+width: 100%; 
+height: 100%; 
+border: 0;
+
+}
+
+.hs-responsive-embed, 
+.hs-responsive-embed.hs-responsive-embed-youtube, 
+.hs-responsive-embed.hs-responsive-embed-wistia, 
+.hs-responsive-embed.hs-responsive-embed-vimeo {
+
+padding-bottom: 56.25%;
+
+}
+
+/* Article Header
+   ========================================================================== */
+
+.page-content article header {
+    margin-bottom: 20px;
+}
+
+.article__title {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-family: 'NRK Etica', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.article__featured-image {
+    display: block;
+
+    margin: 0.5em auto;
+}
+
+.article__author {
+    margin-top: 4px;
+    margin-bottom: 15px;
+    flex: 0 0 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Article Content
+   ========================================================================== */
+
+.page-content article h2 {
+   margin-bottom: 0;
+
+   font-size: 21px;
+}
+
+.page-content article p {
+   margin-top: 0.5em;
+
+   line-height: 1.4em;
+}
+
+.payout-table,
+.payout-table td {
+    text-align: center;
+
+    border-collapse: collapse;
+
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.player-quote {
+    position: relative;
+
+    display: block;
+
+    padding-left: 60px;
+}
+
+.player-quote::before,
+.player-quote::after {
+    position: absolute;
+
+    color: rgb(150, 150, 150);
+    font-family: serif;
+    font-size: 96px;
+    font-weight: bold;
+}
+
+.player-quote::before {
+    content: "“";
+
+    left: 0;
+    top: -20px;
+}
+
+.player-quote::after {
+    content: "";
+}
+
+@media screen and (max-width: 767px) {
+    .payout-table {
+        border-right: none;
+        border-left: none;
+    }
+
+    .payout-table tr td:first-of-type {
+        border-left: none;
+    }
+
+    .payout-table tr td:last-of-type {
+        border-right: none;
+    }
+}
+
+/* Important Box
+   ========================================================================== */
+
+.important-box {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+
+    background: rgba(255, 252, 211, 1);
+
+    border: 2px solid rgba(230, 55, 55, 1);
+    border-radius: 10px;
+}
+
+.important-box h2 {
+    color: rgba(230, 55, 55, 1);
+}
+
+.important-box__signup {
+    margin-top: -10px;
+
+    font-size: 20px;
+    text-align: center;
+}
+
+.important-box__signup::before,
+.important-box__signup::after {
+    color: #ee4723;
+    font-size: 64px;
+    line-height: 48px;
+}
+
+.important-box__signup::before {
+    content: "»";
+}
+
+.important-box__signup::after {
+    content: "«";
+}
+
+.important-box__signup a {
+    position: relative;
+    top: -0.5em;
+
+    vertical-align: baseline;
+}
+
+.important-box__signup.important-box__signup--noarrow {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+}
+
+.important-box__signup.important-box__signup--noarrow a {
+    top: 0;
+}
+
+.important-box__signup.important-box__signup--noarrow::before,
+.important-box__signup.important-box__signup--noarrow::after {
+    content: "";
+
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .important-box {
+        margin: auto 10px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .important-box__signup {
+        font-size: 15px;
+    }
+
+    .important-box__signup::before,
+    .important-box__signup::after {
+        font-size: 46px;
+    }
+
+
+}
+
+/* Facebook Comment Plugin
+   ========================================================================== */
+
+.fb-comments span {
+    margin: 20px auto;
+}
+
+/* Sidebar
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Footer
+   ========================================================================== */
+
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 100px;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+
+    background: rgba(93, 93, 93, 1);
+}
+
+.page-footer__advertorial-notice {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.page-footer__copyright-notice {
+    font-size: 12px;
+}
+
+body[data-culturename="en-GB"] .page-footer .disclaimer {
+    max-width: 580px;
+    margin: 0 auto 20px;
+
+    font-size: 12px;
+}
+
+body[data-culturename="en-GB"] .page-footer .disclaimer .references {
+    color: rgba(255, 255, 255, 1);
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   Shared Styles
+   ========================================================================== */
+
+/* Image Styling
+   ========================================================================== */
+
+.image-container {
+    text-align: center;
+}
+
+.image-subtitle {
+    display: block;
+
+    margin-top: 0.5em;
+
+    font-size: 12px;
+    font-style: oblique;
+    text-align: center;
+}
+
+/* Buttons
+   ========================================================================== */
+
+.btn {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 12px;
+
+    color: rgba(255, 255, 255, 1);
+    font-size: 21px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+.btn--blue {
+    background: rgba(2, 117, 216, 1);
+}
+
+.btn--green {
+    background: rgba(42, 175, 0, 1);
+
+    box-shadow: 0 5px 0 0 rgba(33, 131, 37, 1);
+}
+
+.btn--orange {
+    background: rgba(251, 140, 0, 1);
+}
+
+.btn--animate-grow {
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.btn--animate-grow:hover {
+    transform: scale(1.1);
+
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .btn {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+/* Progressive Jackpot Ticker Group
+   ========================================================================== */
+
+.progressive-jackpot-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progressive-jackpot__title {
+    margin-top: 0;
+    padding: 10px 0 10px 10px;
+
+    font-size: 20px;
+
+    background: rgba(250, 250, 250, 1);
+
+    border-left: 5px solid rgba(238, 71, 35, 1);
+}
+
+.progressive-jackpot__game {
+    display: block;
+}
+
+.progressive-jackpot__label  {
+    margin-bottom: 2px;
+
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.progressive-jackpot__logo {
+    display: block;
+
+    width: 100%;
+    height: 200px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.progressive-jackpot__amount {
+    margin-top: 0;
+    padding: 5px 0;
+
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+
+    background: none;
+
+    border: 2px solid #dddddd;
+    border-top: 0;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .progressive-jackpot-container {
+        padding: 0 10px;
+    }
+
+    .progressive-jackpot__game {
+        display: inline-block;
+
+        width: 47%;
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .progressive-jackpot__game {
+        display: block;
+
+        width: 100%;
+    }
+
+    .progressive-jackpot__label  {
+        text-align: center;
+    }
+
+    .progressive-jackpot__amount {
+        border-right: none;
+        border-left: none;
+    }
+}
+
+/* Mega Moolah Jackpot Ticker
+   ========================================================================== */
+
+.mega-moolah-jackpot-ticker {
+    box-sizing: border-box;
+    width: 500px;
+    height: 145px;
+    margin: 0 auto;
+
+    background-image: url("/Content/themes/cex/shared/rip/ww/img/mm-progressive.gif");
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.mega-moolah-jackpot-ticker span {
+    display: block;
+
+    margin: 0 auto 0;
+
+    color: rgba(255, 255, 0, 1);
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.mega-moolah-jackpot-ticker a {
+    display: block;
+
+    height: 70px;
+    padding-top: 70px;
+
+    text-decoration: none;
+}
+
+@media screen and (max-width: 560px) {
+    .mega-moolah-jackpot-ticker {
+        width: 133.33%;
+        margin-bottom: -35px;
+
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .mega-moolah-jackpot-ticker {
+        width: 166.66%;
+        margin-bottom: -50px;
+
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+/* Mega Moolah Jackpot Ticker Bar
+   ========================================================================== */
+
+.mm-jackpot-bar {
+    z-index: 9;
+
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 70px;
+
+    background: rgba(91, 94, 104, 1);
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.mm-jackpot-bar__listing {
+    display: table;
+
+    width: 100%;
+    max-width: 768px;
+    height: 70px;
+    margin: auto;
+    padding: 0;
+}
+
+.mm-jackpot-bar__listing li {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 2px;
+}
+
+.mm-jackpot-bar__listing li:nth-of-type(1) { max-width: 20%; }
+.mm-jackpot-bar__listing li:nth-of-type(1) img { max-width: 100%; }
+
+.mm-jackpot-bar__listing li:nth-of-type(2) {
+    color: rgba(255, 255, 255, 1);
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mm-jackpot-bar__title {
+    display: block;
+
+    color: rgba(255, 255, 255, 1);
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mm-jackpot-bar__btn {
+    display: inline-block;
+
+    padding: 3px 8px;
+
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 34px;
+    text-transform: uppercase;
+
+    background-color: rgba(42, 175, 0, 1);
+
+    border-radius: 3px;
+}
+
+@media (max-width: 479px) {
+    .mm-jackpot-bar__title {
+        font-size: 12px;
+    }
+
+    .mm-jackpot-bar .progressive-jackpot-ticker {
+        font-size: 20px;
+    }
+
+    .mm-jackpot-bar__btn {
+        border-radius: 0;
+    }
+}
+
+/* ==========================================================================
+   Utility (Helper) Classes
+   ========================================================================== */
+
+.u__text--size-larger {
+    font-size: 1.15em !important;
+    line-height: 1.3em !important;
+}
+
+.u__text--align-center { text-align: center !important; }
+.u__text--align-left   { text-align: left !important; }
+.u__text--align-right  { text-align: right !important; }
+
+.u__text--color-black { color: rgba(  0,   0,   0, 1) !important; }
+.u__text--color-red   { color: rgba(237,  28,  36, 1) !important; }
+.u__text--color-white { color: rgba(255, 255, 255, 1) !important; }
+
+@media screen and (min-width: 768px) {
+    .u__hide-desktop {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .u__hide-mobile {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Style Variants
+   ========================================================================== */
+
+/**
+* Some pages might use a large part of styling and content flow, but needs
+* various styling difference that are SHARED BETWEEN TWO OR MORE PAGES
+*/
+
+/* .style-variant__red--linkout
+   ========================================================================== */
+
+.style-variant__linkout--red a {
+    color: rgba(255, 0, 0, 1);
+}
+
+/* .style-variant__news--financial
+   ========================================================================== */
+
+/**
+* Styling taken from a financial news website
+*/
+
+.style-variant__news--financial article {
+    font-family: Arial, sans-serif;
+}
+
+.style-variant__news--financial article h1 {
+    margin: 20px auto;
+
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.style-variant__news--financial article h2 {
+    color: rgba(0, 64, 109, 1);
+    font-family: serif;
+    line-height: 40px;
+}
+
+.style-variant__news--financial article p {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.style-variant__news--financial .article__author {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    line-height: 21px;
+}
+
+/* .style-variant__news--blog
+   ========================================================================== */
+
+/**
+* Styling taken from a blog-like news website
+*/
+
+.style-variant__news--blog article {
+    font-family: "Times New Roman", serif;
+
+    text-shadow: 0 0 0;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.style-variant__news--blog article h1 {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.style-variant__news--blog article h2 {
+    color: rgba(71, 71, 71, 1);
+}
+
+.style-variant__news--blog article p {
+    color: rgba(71, 71, 71, 1);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.style-variant__news--blog .article__featured-image {
+    width: 100%;
+    margin-top: 0;
+}
+
+.style-variant__news--blog .article__author {
+    text-align: center;
+}
+
+/* ==========================================================================
+   Page Specific Styling
+   ========================================================================== */
+
+/**
+* Some pages might use a large part of styling and content flow, but needs
+* various styling difference that are UNIQUE TO ONE PAGE
+*/
+
+.header-bottom {
+    height: 68px;
+    overflow: hidden;
+    webkit-box-shadow: 0 0 10px rgba(0,0,0,.09);
+    box-shadow: 0 0 10px rgba(0,0,0,.09);
+    text-align: right;
+    background-image: url(bottom_dsk.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.header-dsk {
+    display: none;
+}
+
+.header-dsk, .header-mob {
+    background: #141517;
+}
+
+.header-mob {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+    .header-mob {
+        display: none;
+    }
+
+    .header-dsk {
+        display: flex;
+        justify-content: space-between;
+        height: 55px;
+        overflow: hidden;
+    }
+
+    .article__title {
+        font-size: 2.5rem;
+    }
+
+    .page-content aside {
+        padding-top: 0.5em;
+    }
+}
